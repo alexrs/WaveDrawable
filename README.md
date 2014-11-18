@@ -2,8 +2,13 @@ WaveDrawable
 ===========
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-WaveDrawable-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/981)
 
-
 Drawable animation inspired by Tinder.
+
+###Download
+```Groovy
+compile 'me.alexrs:wave-drawable:1.0.0'
+```
+
 
 - LinearInterpolator
 
