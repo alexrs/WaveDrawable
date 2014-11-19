@@ -11,9 +11,6 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.Animation;
 import android.view.animation.Interpolator;
 
-/**
- * Created by Alejandro on 10/06/14.
- */
 public class WaveDrawable extends Drawable {
 
     private Paint wavePaint;
@@ -25,9 +22,6 @@ public class WaveDrawable extends Drawable {
     protected int alpha;
 
 
-    private ObjectAnimator waveAnimator;
-    private ObjectAnimator alphaAnimator;
-
     private Interpolator waveInterpolator;
     private Interpolator alphaInterpolator;
 
@@ -35,9 +29,9 @@ public class WaveDrawable extends Drawable {
     private AnimatorSet animatorSet;
 
     /**
-     * @param color
-     * @param radius
-     * @param animationTime
+     * @param color         color
+     * @param radius        radius
+     * @param animationTime time
      */
     public WaveDrawable(int color, int radius, long animationTime) {
         this(color, radius);
@@ -45,8 +39,8 @@ public class WaveDrawable extends Drawable {
     }
 
     /**
-     * @param color
-     * @param radius
+     * @param color  colro
+     * @param radius radius
      */
     public WaveDrawable(int color, int radius) {
         this.color = color;
@@ -73,30 +67,24 @@ public class WaveDrawable extends Drawable {
     }
 
     /**
-     * @param interpolator
+     * @param interpolator interpolator
      */
     public void setWaveInterpolator(Interpolator interpolator) {
         this.waveInterpolator = interpolator;
     }
 
     /**
-     * @param interpolator
+     * @param interpolator interpolator
      */
     public void setAlphaInterpolator(Interpolator interpolator) {
         this.alphaInterpolator = interpolator;
     }
 
-    /**
-     *
-     */
     public void startAnimation() {
         animator = generateAnimation();
         animator.start();
     }
 
-    /**
-     *
-     */
     public void stopAnimation() {
         if (animator.isRunning()) {
             animator.end();
@@ -104,9 +92,6 @@ public class WaveDrawable extends Drawable {
     }
 
 
-    /**
-     * @return
-     */
     public boolean isAnimationRunning() {
         if (animator != null) {
             return animator.isRunning();
@@ -143,7 +128,7 @@ public class WaveDrawable extends Drawable {
     private Animator generateAnimation() {
 
         //Wave animation
-        waveAnimator = ObjectAnimator.ofFloat(this, "waveScale", 0f, 1f);
+        ObjectAnimator waveAnimator = ObjectAnimator.ofFloat(this, "waveScale", 0f, 1f);
         waveAnimator.setDuration(animationTime);
         if (waveInterpolator != null) {
             waveAnimator.setInterpolator(waveInterpolator);
@@ -153,7 +138,7 @@ public class WaveDrawable extends Drawable {
         waveAnimator.setRepeatMode(Animation.INFINITE);
 
         //alpha animation
-        alphaAnimator = ObjectAnimator.ofInt(this, "alpha", 255, 0);
+        ObjectAnimator alphaAnimator = ObjectAnimator.ofInt(this, "alpha", 255, 0);
         alphaAnimator.setDuration(animationTime);
         if (alphaInterpolator != null) {
             alphaAnimator.setInterpolator(alphaInterpolator);

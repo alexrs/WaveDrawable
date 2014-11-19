@@ -1,19 +1,21 @@
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
+apply plugin: 'bintray-release'
+
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.0"
 
     defaultConfig {
-        applicationId "me.alexrs.expandablelayout.wavedrawable.lib"
+        applicationId "me.alexrs.wavedrawable"
         minSdkVersion 14
-        targetSdkVersion 19
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -21,5 +23,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:19.+'
+}
+
+publish {
+    userOrg = 'alexrs95'
+    groupId = 'me.alexrs'
+    artifactId = 'wave-drawable'
+    version = '1.0.0'
+    description = 'Drawable animation inspired by Tinder'
+    website = 'https://github.com/Alexrs95/WaveDrawable'
+    issueTracker = "https://github.com/Alexrs95/WaveDrawable/issues"
+    repository = "https://github.com/Alexrs95/WaveDrawable.git"
 }

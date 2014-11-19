@@ -17,7 +17,8 @@
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/spinner"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_launcher"
-        android:layout_below="@+id/spinner" />
+        android:src="@drawable/ic_launcher" />
+
 </RelativeLayout>

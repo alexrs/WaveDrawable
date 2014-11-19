@@ -46,6 +46,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         waveDrawable = new WaveDrawable(Color.parseColor("#8e44ad"), 500);
         imageView.setBackgroundDrawable(waveDrawable);
 
+
     }
 
 
