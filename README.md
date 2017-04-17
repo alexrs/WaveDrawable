@@ -4,7 +4,7 @@ WaveDrawable
 
 Drawable animation inspired by Tinder.
 
-###Download
+### Download
 ```Groovy
 compile 'me.alexrs:wave-drawable:1.0.0'
 ```
