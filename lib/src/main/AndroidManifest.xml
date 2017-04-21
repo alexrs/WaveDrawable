@@ -1,7 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.alexrs.expandablelayout.wavedrawable.lib">
-
-    <application android:allowBackup="true">
+<manifest package="me.alexrs.expandablelayout.wavedrawable.lib">
 
     </application>
 
